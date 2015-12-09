@@ -1,5 +1,8 @@
 <img align="left" src="rainbowGalaxy.png" height="100" width="100">
 ###A series of images made with Python Turtle Graphics
+
+I've been playing around with turtle graphics - it's a fun way to learn, and with a little experimentation and thought you can come up with all sorts of interesting images.
+
 The first image is pretty simple:
 
 	import turtle
@@ -33,7 +36,7 @@ The first image is pretty simple:
 It looks like this:
 ![straightRayBurst](straightRayBurst.png)
 
-This one is just a repeat of the previous with some different parameters, mostly increasing the randomness:
+This image below is just a repeat of the previous with some different parameters, mostly increasing the randomness:
 
 ![wobblyRayBurst](wobblyRayBurst.png)
 
