@@ -1,5 +1,5 @@
-A series of images made with Python Turtle Graphics
-
+<img align="left" src="rainbowGalaxy.png" height="100" width="100">
+###A series of images made with Python Turtle Graphics
 The first image is pretty simple:
 
 	import turtle
@@ -30,6 +30,7 @@ The first image is pretty simple:
 	turtle.update()
 	wn.exitonclick()
 
+It looks like this:
 ![straightRayBurst](straightRayBurst.png)
 
 This one is just a repeat of the previous with some different parameters, mostly increasing the randomness:
