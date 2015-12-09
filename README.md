@@ -1,6 +1,6 @@
 A series of images made with Python Turtle Graphics
 
-The first image is pretty simple
+The first image is pretty simple:
 
 	import turtle
 	import random
@@ -32,12 +32,12 @@ The first image is pretty simple
 
 ![straightRayBurst](straightRayBurst.png)
 
-This one is just a repeat of the previous with some different parameters, mostly increasing the randomness
+This one is just a repeat of the previous with some different parameters, mostly increasing the randomness:
 
 ![wobblyRayBurst](wobblyRayBurst.png)
 
-I wanted to try something a little more challenging, so I made a couple of functions to get more control over the image
-The RGB color generator is still limited, later I make one with better control.
+I wanted to try something a little more challenging, so I made a couple of functions to get more control over the image. 
+The RGB color generator is still limited; later I make one with better control.
 
 	import random
 	import turtle
@@ -113,7 +113,7 @@ By setting the variation parameters to 0, you get a straighter version:
 Here I added a little spiral and set the length of each increment to a couple of pixels. Using all these nested loops is probably a very inefficient way to do this, but it works, and it looks pretty cool:
 ![concentricRays2](concentricRays2.png)
 
-This bit of code adds a better color generator - this time with control over hue, saturation and value.
+This bit of code adds a better color generator - this time with control over hue, saturation and value:
 
 	import random
 	import turtle
@@ -216,6 +216,33 @@ By making the hue a function of direction using alex.heading(), you get a nice r
 ![rainbowGalaxy](rainbowGalaxy.png)
 
 Lastly, this code makes a nice looking set of colored sine waves that curve around in an interesting way:
+	def waves(repeats = 1):
+	    """Draws nested colored sinusoids emerging from darkness"""
+	    for i in range(repeats):
+	        alex.up()
+	        alex.color(hueGen(i, .5*i/repeats, .5))
+	        alex.goto(-315,315 - i)
+	        alex.seth(45) # set heading
+	        x = alex.xcor()
+	        y = alex.ycor()
+	        f = i + 1
+	        for j in range(630):
+	            x = alex.xcor()
+	            alex.goto(x + 1, y + 25*sin(8*j/f + i/25)) # plot sines
+	            alex.down()
+	            x = alex.xcor()
+
+	turtle.tracer(0, 0)
+	wn = turtle.Screen()
+	wn.colormode(1)
+	turtle.bgcolor("black")
+	alex = turtle.Turtle()
+	alex.speed(10)
+	alex.pensize(2)
+	alex.ht()
+	waves(700)
+	turtle.update()
+	wn.exitonclick()
 ![sineWaves1](sineWaves1.png)
 
 Setting both the value and saturation to .5 gives this:
